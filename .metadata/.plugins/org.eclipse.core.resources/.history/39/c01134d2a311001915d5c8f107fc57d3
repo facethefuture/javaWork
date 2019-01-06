@@ -1,0 +1,5 @@
+package com.bbbb.spring.controller;
+
+public class AnnotationController {
+
+}

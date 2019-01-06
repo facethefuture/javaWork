@@ -1,0 +1,12 @@
+package com.bbbb.spring.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class AnnotationController {
+	@RequestMapping
+	public ModelAndView jumpToAnnotationPage(){
+		
+		return "annotation.jsp";
+	}
+}
