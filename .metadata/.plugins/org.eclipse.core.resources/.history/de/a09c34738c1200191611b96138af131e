@@ -1,0 +1,5 @@
+package com.bbbb.spring.annotationController;
+
+public class AnnotationDemo {
+
+}
