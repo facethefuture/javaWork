@@ -15,7 +15,19 @@
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<bean name="/home" class="com.bbbb.spring.controller.HellowController" id="homeController"></bean>
 	<bean class="com.bbbb.spring.controller.AnnotationController" id="annotationController"></bean>
+	<!-- 开启注解扫描 -->
 	<context:component-scan base-package="com.bbbb.spring.annotationController"></context:component-scan>
+	<context:component-scan base-package="com.bbbb.spring.controller"></context:component-scan>
+	<!-- 添加对springMVC支持 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
+	<!-- 增加对静态资源处理 -->
 	<mvc:default-servlet-handler></mvc:default-servlet-handler>
+		<!-- 配置文件上传解析器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置上传文件的最大尺寸为1MB -->
+		<property name="maxUploadSize">
+			<value>1048576</value>
+		</property>
+	</bean>
 </beans>
