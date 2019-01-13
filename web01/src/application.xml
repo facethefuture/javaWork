@@ -18,10 +18,19 @@
 	<!-- 开启注解扫描 -->
 	<context:component-scan base-package="com.bbbb.spring.annotationController"></context:component-scan>
 	<context:component-scan base-package="com.bbbb.spring.controller"></context:component-scan>
+	
+	<!-- 注解和配置同时使用 -->
+	<context:component-scan base-package="com.bbbb.spring.componentScan.soundsystem"></context:component-scan>
+	
+	
 	<!-- 添加对springMVC支持 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<!-- 增加对静态资源处理 -->
 	<mvc:default-servlet-handler></mvc:default-servlet-handler>
+	<!-- 启动注解  用来实现注入 -->
+	<context:annotation-config/>
+		
+		
 		<!-- 配置文件上传解析器 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

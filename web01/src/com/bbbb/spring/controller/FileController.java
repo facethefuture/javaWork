@@ -35,7 +35,7 @@ public class FileController {
 			InputStream inputStream = file.getInputStream();
 			String uuid = UUID.randomUUID().toString();
 			String lastName = file.getOriginalFilename().split("\\.")[1]; 
-			String fileName = uuid + "\\." + lastName;
+			String fileName = uuid + "." + lastName;
 			out = new FileOutputStream(new File(dir,fileName));
 			System.out.println(Paths.get("D:/images"));
 			Files.copy(Paths.get("D:/images"), out);
