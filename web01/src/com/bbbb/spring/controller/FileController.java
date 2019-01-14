@@ -15,11 +15,15 @@ import java.util.UUID;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.bbbb.spring.componentScan.soundsystem.Cd1;
 
 @Controller
 public class FileController {
@@ -77,5 +81,15 @@ public class FileController {
 			}
 		}
 		
+	}
+	@Autowired
+	private Cd1 myCd;
+	@RequestMapping("/cd")
+	public ModelAndView  cdController(){
+		myCd.play();
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("key", "value");
+		mv.setViewName("cd.jsp");
+		return mv;
 	}
 }
