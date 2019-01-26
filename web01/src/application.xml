@@ -21,7 +21,8 @@
 	
 	<!-- 注解和配置同时使用 -->
 	<context:component-scan base-package="com.bbbb.spring.componentScan.soundsystem"></context:component-scan>
-	
+	<!-- 将performance和audience的类扫描进来 -->
+	<context:component-scan base-package="com.bbbb.spring.performanceConfig"></context:component-scan>
 	
 	<!-- 添加对springMVC支持 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
