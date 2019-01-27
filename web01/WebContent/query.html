@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/web01/queryStudent">
+		<input value="提交" type="submit" >
+	</form>
+	<button id="submit">提花</button>
+</body>
+<script>
+
+var getStudent = function () {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadyStateChange = function () {
+		if (xhr.readyState == 4) {
+			console.log(4)
+			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+				console.log(xhr);
+			} else {
+				console.log(xhr.status)
+			}
+		}
+	}
+	xhr.open("get","/web01/queryStudent",true);
+	xhr.send(null);
+}
+document.querySelector("#submit").onclick = function () {
+	console.log("test")
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState == 4) {
+			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+				console.log(xhr);
+				document.querySelector("#submit").innerHTML = xhr.responseText
+			} else {
+				console.log(xhr.status)
+			}
+		}
+	}
+	xhr.open("get","/web01/queryStudent",true);
+	xhr.send(null);
+}
+
+</script>
+</html>
