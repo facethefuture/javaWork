@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
+<libraryInfo home="E:\OpenSources\Java\jdk1.7.0_17\jre" version="1.7.0_17">
+<bootpath>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\resources.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\rt.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\sunrsasign.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jsse.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jce.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\charsets.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jfr.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="D:\jdk1.7.0_17" version="1.7.0_17">
 <bootpath>
 <entry path="D:\jdk1.7.0_17\jre\lib\resources.jar"/>
@@ -17,6 +36,25 @@
 </extensionDirs>
 <endorsedDirs>
 <entry path="D:\jdk1.7.0_17\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="E:\OpenSources\Java\jdk1.7.0_17" version="1.7.0_17">
+<bootpath>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\resources.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\rt.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\sunrsasign.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jsse.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jce.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\charsets.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\jfr.jar"/>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="E:\OpenSources\Java\jdk1.7.0_17\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 </libraryInfos>

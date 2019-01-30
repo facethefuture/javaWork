@@ -19,7 +19,7 @@ public class Dbcp {
 	private String sqlStr = "INSERT INTO student (id,name) VALUES (?,?)";
 	private String deleteSql = "DELETE FROM student WHERE id = ?";
 	private String updateSql = "UPDATE student SET name = ? WHERE id = ?";
-	private String querySql = "SELECT * FROM student";
+	private String querySql = "SELECT * FROM student LIMIT ?,3";
 	@Autowired
 	private DataSource dataSource;
 	private Connection conn = null;
@@ -118,48 +118,59 @@ public class Dbcp {
 			}
 		}
 	}
-	public List<Student> queryStudent(){
+	public List<Student> queryStudent(int page){
+		Connection conn2 = null;
+		PreparedStatement stmt2 = null;
+		ResultSet rs2 = null;
 		List<Student> students = new ArrayList<Student>();
 		System.out.println("查询");
 		try{
-			conn = dataSource.getConnection();
-			stmt = conn.prepareStatement(querySql);
-			rs = stmt.executeQuery();
+			conn2 = dataSource.getConnection();
+			stmt2 = conn2.prepareStatement(querySql);
+			System.out.println((page - 1) * 3);
+			System.out.println(page * 3);
+			stmt2.setInt(1, (page -1) * 3);
+			rs2 = stmt2.executeQuery();
 		
-			while(rs.next()){
+			while(rs2.next()){
 				//System.out.println(rs.getString("name"));
-				Student st = new Student(rs.getInt("id"),rs.getString("name"));
+				Student st = new Student(rs2.getInt("id"),rs2.getString("name"));
 				students.add(st);
 			}
 			
 		} catch (SQLException e){
 			e.printStackTrace();
 		} finally{
-			if (rs != null){
 				try {
-					rs.close();
+					if (rs2 != null) {
+						rs2.close();
+					}
+					
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				} finally {
+				
+						try {
+							if (stmt2 != null) {
+								stmt2.close();
+							}
+						
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} finally {
+							try{
+								if (conn2 != null){
+									conn2.close();
+								}
+							} catch (SQLException e){
+								e.printStackTrace();
+							}
+						
+						}
+					}
 			}
-			if (stmt != null) {
-				try {
-					stmt.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			if (conn != null){
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
 		return students;
 	}
 	

@@ -60,8 +60,8 @@ public class UploadController {
 	}
 	@ResponseBody
 	@RequestMapping("/queryStudent")
-	public String queryStudent(){
-		List<Student> students = dbcp.queryStudent();
+	public String queryStudent(@RequestParam(value="page") int page){
+		List<Student> students = dbcp.queryStudent(page);
 		System.out.println(students.toString());
 		return JSON.toJSONString(students);
 	}
