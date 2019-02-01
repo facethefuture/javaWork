@@ -19,7 +19,7 @@ public class Dbcp {
 	private String sqlStr = "INSERT INTO student (id,name) VALUES (?,?)";
 	private String deleteSql = "DELETE FROM student WHERE id = ?";
 	private String updateSql = "UPDATE student SET name = ? WHERE id = ?";
-	private String querySql = "SELECT * FROM student LIMIT ?,3";
+	private String querySql = "SELECT * FROM student ORDER BY age DESC LIMIT ?,?";
 	@Autowired
 	private DataSource dataSource;
 	private Connection conn = null;
@@ -127,14 +127,14 @@ public class Dbcp {
 		try{
 			conn2 = dataSource.getConnection();
 			stmt2 = conn2.prepareStatement(querySql);
-			System.out.println((page - 1) * 3);
-			System.out.println(page * 3);
 			stmt2.setInt(1, (page -1) * 3);
+			stmt2.setInt(2, 3);
 			rs2 = stmt2.executeQuery();
 		
 			while(rs2.next()){
 				//System.out.println(rs.getString("name"));
-				Student st = new Student(rs2.getInt("id"),rs2.getString("name"));
+				System.out.println(rs2.getInt("age"));
+				Student st = new Student(rs2.getInt("id"),rs2.getString("name"),rs2.getInt("age"));
 				students.add(st);
 			}
 			

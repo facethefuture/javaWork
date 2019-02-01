@@ -62,7 +62,7 @@ public class UploadController {
 	@RequestMapping("/queryStudent")
 	public String queryStudent(@RequestParam(value="page") int page){
 		List<Student> students = dbcp.queryStudent(page);
-		System.out.println(students.toString());
+		System.out.println(students.get(0).getAge());
 		return JSON.toJSONString(students);
 	}
 }

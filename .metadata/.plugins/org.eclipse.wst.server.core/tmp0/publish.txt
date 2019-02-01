@@ -1,5 +1,4 @@
 #Tomcat publish data
-#Wed Jan 30 23:44:05 CST 2019
-org.eclipse.jst.jee.server\:/binary\:E\:\\WorkSpace2\\javaWorkSpace\\web01\\WebContent\\WEB-INF\\classes\\spring-web-4.1.2.RELEASE.jar=E\:\\apache-tomcat-7.0.92\\webapps\\web01\\WEB-INF\\classes\\spring-web-4.1.2.RELEASE.jar
-org.eclipse.jst.jee.server\:web01=E\:\\apache-tomcat-7.0.92\\webapps\\web01
-org.eclipse.jst.jee.server\:/binary\:E\:\\WorkSpace2\\javaWorkSpace\\web01\\src\\spring-web-4.1.2.RELEASE.jar=E\:\\apache-tomcat-7.0.92\\webapps\\web01\\WEB-INF\\lib\\spring-web-4.1.2.RELEASE.jar
+#Fri Feb 01 17:05:51 CST 2019
+org.eclipse.jst.jee.server\:/binary\:D\:\\WorkSpace\\javaWorkSpace\\web01\\src\\spring-web-4.1.2.RELEASE.jar=WEB-INF/lib/spring-web-4.1.2.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\WorkSpace\\javaWorkSpace\\web01\\WebContent\\WEB-INF\\classes\\spring-web-4.1.2.RELEASE.jar=WEB-INF/classes/spring-web-4.1.2.RELEASE.jar
